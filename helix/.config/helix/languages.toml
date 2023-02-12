@@ -1,0 +1,14 @@
+[[language]]
+name = "rust"
+language-server = { command = "/home/amora/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer" }
+
+# formatter = { command = "mylang-formatter" , args = ["--stdin"] }
+# [[language]]
+# name = "typescript"
+# language-server = { command = "/home/amora/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer" }
+
+# [[language]]
+# name = "python"
+# roots = ["pyproject.toml"]
+# language-server = { command = "pyright-langserver", args = ["--stdio"] }
+# config = {} # <- this is the important line
