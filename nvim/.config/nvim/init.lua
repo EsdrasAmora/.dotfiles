@@ -426,5 +426,5 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-vim.api.nvim_command('hi Normal guibg=NONE ctermbg=NONE')
+--vim.api.nvim_command('hi Normal guibg=NONE ctermbg=NONE')
 -- vim.o.hi("Normal", {ctermbg = "NONE", guibg = "NONE"})

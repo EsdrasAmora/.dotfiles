@@ -10,7 +10,7 @@ eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 
 alias cat="bat"
-alias ls="exa"
+alias ls="exa --icons -a --group-directories-first"
 alias fd='fd --type f --color=always -H --exclude .git'
 alias vim='nvim'
 alias lg='lazygit'
@@ -32,6 +32,9 @@ export FZF_DEFAULT_OPTS="-m --height 50% --layout=reverse --border --inline-info
 "
 export FZF_DEFAULT_COMMAND='fd --type file --hidden --exclude .git'
 export FZF_CTRL_T_COMMAND='fd --type file --hidden --exclude .git'
+export PATH=/home/amora/.local/bin:$PATH
+export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
+# export RUSTC_WRAPPER=sccache cargo install {package}
 
 source /usr/share/nvm/init-nvm.sh
 source /usr/share/fzf/key-bindings.bash

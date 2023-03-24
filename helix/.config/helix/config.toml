@@ -8,6 +8,7 @@ rulers=[80,120]
 shell = ["bash", "-c"]
 true-color = true
 bufferline = "always"
+auto-pairs = false
 
 [editor.cursor-shape]
 insert = "bar"
@@ -16,6 +17,12 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+# git-exclude = false
+# git-ignore = false
+# parents = false
+
+[editor.lsp]
+display-messages = true
 
 [editor.search]
 smart-case = false
@@ -25,8 +32,6 @@ render = true
 character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
 skip-levels = 1
 
-# [editor.whitespace]
-# render = "all"
 
 [keys.normal]
 C-p = ["move_line_up","scroll_up"]
@@ -37,6 +42,11 @@ C-s = ":w"
 
 [keys.insert]
 C-space = "completion"
+
+
+# [editor.whitespace]
+# render = "all"
+
 # [editor.whitespace.characters]
 # space = "·"
 # nbsp = "⍽"
