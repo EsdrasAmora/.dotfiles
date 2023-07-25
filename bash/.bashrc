@@ -43,7 +43,6 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export REACT_EDITOR=code
 export PATH="$PATH:$HOME/.cargo/bin/"
-export RUSTC_WRAPPER=sccache cargo install {package}
 
 source /usr/share/nvm/init-nvm.sh
 source /usr/share/fzf/key-bindings.bash
