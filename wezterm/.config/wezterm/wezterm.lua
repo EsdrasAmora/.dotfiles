@@ -5,7 +5,7 @@ local act = wezterm.action
 return {
 	default_prog = { "/bin/bash" }, -- why is this necessary: https://github.com/wez/wezterm/issues/2870
 	debug_key_events = true,
-	-- font = wezterm.font_with_fallback({ "Fira Code", "Noto Sans Mono", "Symbols Nerd Font Mono" }),
+	font = wezterm.font_with_fallback({ "Fira Code", "Hack Nerd Font" }),
 	-- Hack Nerd Font
 	window_background_opacity = 0.8,
 	text_background_opacity = 1.0,
@@ -24,7 +24,7 @@ return {
 	-- 'JetBrainsMono Nerd Font Mono', -- Comic code breaks the font
 	-- 'Noto Color Emoji',
 	-- },
-	line_height = 1.2,
+	line_height = 1.5,
 	-- don't know what this is
 	-- harfbuzz_features = {
 	-- 	"cv06=1",
