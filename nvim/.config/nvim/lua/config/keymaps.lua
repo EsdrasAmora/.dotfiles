@@ -3,3 +3,5 @@
 -- Add any additional keymaps here
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { remap = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { remap = true })
+vim.keymap.set("n", "<Leader>o", "o<Esc>", { remap = true })
+vim.keymap.set("n", "<Leader>O", "O<Esc>", { remap = true })

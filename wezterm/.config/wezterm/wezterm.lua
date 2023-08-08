@@ -10,7 +10,7 @@ return {
 	window_background_opacity = 0.8,
 	text_background_opacity = 1.0,
 	scrollback_lines = 5000,
-	font_size = 16.0,
+	font_size = 17.0,
 	window_padding = {
 		left = 2,
 		right = 2,
@@ -24,7 +24,7 @@ return {
 	-- 'JetBrainsMono Nerd Font Mono', -- Comic code breaks the font
 	-- 'Noto Color Emoji',
 	-- },
-	line_height = 1.5,
+	line_height = 1.1,
 	-- don't know what this is
 	-- harfbuzz_features = {
 	-- 	"cv06=1",
