@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 [[ "$(whoami)" = "root" ]] && return
-[[ -z "$FUNCNEST" ]] && export FUNCNEST=100          # limits recursive functions, see 'man bash'
+[[ -z "$FUNCNEST" ]] && export FUNCNEST=100 # limits recursive functions, see 'man bash'
 
 set -o ignoreeof
 # set -o vi
@@ -24,8 +24,9 @@ bind '"\e[B":history-search-forward'
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias bathelp='bat --plain --language=help'
+alias xpaste='xclip -selection clipboard -o'
 help() {
-    "$@" --help 2>&1 | bathelp
+	"$@" --help 2>&1 | bathelp
 }
 
 export FZF_DEFAULT_OPTS="-m --height 50% --layout=reverse --border --inline-info 
@@ -53,4 +54,4 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # source /home/amora/.cache/yay/rvm/src/rvm/scripts/rvm
 
 export PNPM_HOME="/home/amora/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH" 
+export PATH="$PNPM_HOME:$PATH"
