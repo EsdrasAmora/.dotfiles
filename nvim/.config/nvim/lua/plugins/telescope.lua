@@ -8,23 +8,20 @@ return {
         require("telescope").load_extension("fzf")
       end,
     },
-    -- TODO: I don't know how to extend these mappings.
-    -- opts = {
-    --   mappings = {
-    --     i = {
-    --       ["<c-a>"] = function(...)
-    --         vim.notify("hello world")
-    --         return require("telescope.actions").to_fuzzy_refine(...)
-    --       end,
-    --     },
-    --     n = {
-    --       ["c-a"] = function()
-    --         vim.notify("potatooooo")
-    --         return {}
-    --       end,
-    --     },
-    --   },
-    -- },
+    opts = {
+      defaults = {
+        sort_lastused = true,
+        wrap_results = true,
+        path_display = { "truncate" },
+        mappings = {
+          i = {
+            ["<c-j>"] = function(...)
+              return require("telescope.actions").to_fuzzy_refine(...)
+            end,
+          },
+        },
+      },
+    },
   },
   {
     "axkirillov/easypick.nvim",
