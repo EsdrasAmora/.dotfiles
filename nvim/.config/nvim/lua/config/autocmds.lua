@@ -10,14 +10,7 @@
 
 vim.api.nvim_create_user_command("SayHello", 'echo "Hello world!"', {})
 
-vim.api.nvim_create_user_command("LuaHello", function()
-  vim.notify("Hi There from notify!")
-  print("Hi from print")
-end, {})
-
 vim.api.nvim_create_user_command("TsErrors", function()
-  vim.notify("Hi There from notify!")
   vim.cmd.compiler("tsc")
   vim.cmd.make("--noEmit")
-  vim.notify("GG")
 end, {})

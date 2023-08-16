@@ -6,6 +6,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+if os.getenv("NVIM") ~= nil then
+  require("lazy").setup({
+    ---@diagnostic disable-next-line: missing-fields
+    { "willothy/flatten.nvim", config = true },
+  })
+  return
+end
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins

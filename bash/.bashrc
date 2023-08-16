@@ -24,7 +24,8 @@ bind '"\e[B":history-search-forward'
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias bathelp='bat --plain --language=help'
-alias xpaste='xclip -selection clipboard -o'
+alias xpaste='xclip -selection c -o'
+alias xcopy='xclip -selection c'
 help() {
 	"$@" --help 2>&1 | bathelp
 }
@@ -42,7 +43,8 @@ export ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL=10
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-export REACT_EDITOR=code
+export REACT_EDITOR=nvim
+export EDITOR=nvim
 export PATH="$PATH:$HOME/.cargo/bin/"
 
 source /usr/share/nvm/init-nvm.sh

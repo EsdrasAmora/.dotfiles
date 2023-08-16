@@ -8,6 +8,7 @@ return {
         require("telescope").load_extension("fzf")
       end,
     },
+    -- add QUICKFIX
     opts = {
       defaults = {
         sort_lastused = true,
@@ -16,6 +17,7 @@ return {
         mappings = {
           i = {
             ["<c-j>"] = function(...)
+              vim.notify("Refine query")
               return require("telescope.actions").to_fuzzy_refine(...)
             end,
           },
@@ -24,11 +26,20 @@ return {
     },
   },
   {
+    "axieax/urlview.nvim",
+    opts = {
+      default_picker = "telescope",
+    },
+  },
+  {
     "axkirillov/easypick.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
     config = function()
       local easypick = require("easypick")
       easypick.setup({
+        -- TODO:
+        -- create a list of hunks instead
+        -- or maybe show the file, but with a preview of changes like vscode
         pickers = {
           {
             name = "Uncommited changes",

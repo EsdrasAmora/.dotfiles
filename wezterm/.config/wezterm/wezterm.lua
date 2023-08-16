@@ -27,7 +27,7 @@ return {
 	animation_fps = 120,
 	cursor_blink_rate = 800,
 	cursor_thickness = 1.0,
-	default_cursor_style = "BlinkingBar",
+	-- default_cursor_style = "BlinkingBar",
 	window_frame = {
 		inactive_titlebar_bg = "#171723",
 		active_titlebar_bg = "#171723",
