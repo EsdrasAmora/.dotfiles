@@ -3,4 +3,9 @@ return {
   config = true,
   lazy = false,
   priority = 1001,
+  opts = {
+    window = {
+      open = "alternate",
+    },
+  },
 }

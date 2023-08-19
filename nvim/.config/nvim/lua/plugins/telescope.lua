@@ -2,14 +2,29 @@ return {
   {
     "telescope.nvim",
     dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+        config = function()
+          require("telescope").load_extension("fzf")
+        end,
+      },
     },
-    -- add QUICKFIX
+    keys = {
+      { "<Leader>sq", "<cmd>Telescope quickfix<CR>", desc = "Telescope quickfix" },
+    },
     opts = {
+      --TODO: I don't know how to load this telescope extension. https://github.com/Marskey/telescope-sg
+      -- extensions = {
+      --   ast_grep = {
+      --     command = {
+      --       "ast-grep",
+      --       "--json=stream",
+      --     },
+      --     grep_open_files = false,
+      --     lang = nil,
+      --   },
+      -- },
       defaults = {
         sort_lastused = true,
         wrap_results = true,
@@ -17,7 +32,6 @@ return {
         mappings = {
           i = {
             ["<c-j>"] = function(...)
-              vim.notify("Refine query")
               return require("telescope.actions").to_fuzzy_refine(...)
             end,
           },
