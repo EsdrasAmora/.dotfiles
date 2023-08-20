@@ -10,6 +10,7 @@ return {
         "tsx",
         "typescript",
         "rust",
+        "markdown",
       })
     end,
   },
