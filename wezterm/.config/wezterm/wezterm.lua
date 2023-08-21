@@ -2,6 +2,54 @@ local wezterm = require("wezterm")
 local gpus = wezterm.gui.enumerate_gpus()
 local act = wezterm.action
 
+local function editable(filename)
+	local extension = filename:match("^.+(%..+)$")
+	if extension then
+		extension = extension:sub(2)
+		wezterm.log_info(string.format("extension is [%s]", extension))
+		local binary_extensions = {
+			jpg = true,
+			jpeg = true,
+		}
+		if binary_extensions[extension] then
+			return false
+		end
+	end
+
+	return true
+end
+
+-- @param uri string
+local function extract_filename(uri)
+	local start, match_end = uri:find("$EDITOR:")
+	if start == 1 then
+		return uri:sub(match_end + 1)
+	end
+
+	start, match_end = uri:find("file:")
+	if start == 1 then
+		local host_and_path = uri:sub(match_end + 3)
+		start, match_end = host_and_path:find("/")
+		if start then
+			return host_and_path:sub(match_end)
+		end
+	end
+
+	return nil
+end
+
+wezterm.on("open-uri", function(window, pane, uri)
+	local name = extract_filename(uri)
+	if name and editable(name) then
+		local editor = "nvim"
+		local action = wezterm.action({ SpawnCommandInNewTab = {
+			args = { editor, name },
+		} })
+		window:perform_action(action, pane)
+		return false
+	end
+end)
+
 return {
 	default_prog = { "/bin/bash" }, -- why is this necessary: https://github.com/wez/wezterm/issues/2870
 	debug_key_events = true,
@@ -68,6 +116,37 @@ return {
 				act.ClearScrollback("ScrollbackAndViewport"),
 				act.SendKey({ key = "L", mods = "CTRL" }),
 			}),
+		},
+	},
+	hyperlink_rules = {
+		-- These are the default rules, but you currently need to repeat
+		-- them here when you define your own rules, as your rules override
+		-- the defaults
+
+		-- URL with a protocol
+		{
+			regex = "\\b\\w+://(?:[\\w.-]+)\\.[a-z]{2,15}\\S*\\b",
+			format = "$0",
+		},
+
+		-- implicit mailto link
+		{
+			regex = "\\b\\w+@[\\w-]+(\\.[\\w-]+)+\\b",
+			format = "mailto:$0",
+		},
+
+		-- new in nightly builds; automatically highly file:// URIs.
+		{
+			regex = "\\bfile://\\S*\\b",
+			format = "$0",
+		},
+
+		-- Now add a new item at the bottom to match things that are
+		-- probably filenames
+
+		{
+			regex = "\\b\\S*\\b",
+			format = "$EDITOR:$0",
 		},
 	},
 }
