@@ -50,6 +50,13 @@ wezterm.on("open-uri", function(window, pane, uri)
 	end
 end)
 
+local hyperlink_rules = wezterm.default_hyperlink_rules()
+
+table.insert(hyperlink_rules, {
+	regex = "\\b\\S*\\b",
+	format = "$EDITOR:$0",
+})
+
 return {
 	default_prog = { "/bin/bash" }, -- why is this necessary: https://github.com/wez/wezterm/issues/2870
 	debug_key_events = true,
@@ -118,35 +125,5 @@ return {
 			}),
 		},
 	},
-	hyperlink_rules = {
-		-- These are the default rules, but you currently need to repeat
-		-- them here when you define your own rules, as your rules override
-		-- the defaults
-
-		-- URL with a protocol
-		{
-			regex = "\\b\\w+://(?:[\\w.-]+)\\.[a-z]{2,15}\\S*\\b",
-			format = "$0",
-		},
-
-		-- implicit mailto link
-		{
-			regex = "\\b\\w+@[\\w-]+(\\.[\\w-]+)+\\b",
-			format = "mailto:$0",
-		},
-
-		-- new in nightly builds; automatically highly file:// URIs.
-		{
-			regex = "\\bfile://\\S*\\b",
-			format = "$0",
-		},
-
-		-- Now add a new item at the bottom to match things that are
-		-- probably filenames
-
-		{
-			regex = "\\b\\S*\\b",
-			format = "$EDITOR:$0",
-		},
-	},
+	hyperlink_rules = hyperlink_rules,
 }
