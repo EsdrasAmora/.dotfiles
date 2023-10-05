@@ -52,10 +52,10 @@ end)
 
 local hyperlink_rules = wezterm.default_hyperlink_rules()
 
-table.insert(hyperlink_rules, {
-	regex = "\\b\\S*\\b",
-	format = "$EDITOR:$0",
-})
+-- table.insert(hyperlink_rules, {
+-- 	regex = "\\b\\S*\\b",
+-- 	format = "$EDITOR:$0",
+-- })
 
 return {
 	default_prog = { "/bin/bash" }, -- why is this necessary: https://github.com/wez/wezterm/issues/2870
