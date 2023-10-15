@@ -59,7 +59,7 @@ table.insert(hyperlink_rules, {
 
 return {
 	default_prog = { "/bin/bash" }, -- why is this necessary: https://github.com/wez/wezterm/issues/2870
-	debug_key_events = true,
+	-- debug_key_events = true,
 	font = wezterm.font_with_fallback({ "Fira Code", "Hack Nerd Font" }),
 	window_background_opacity = 0.8,
 	text_background_opacity = 1.0,

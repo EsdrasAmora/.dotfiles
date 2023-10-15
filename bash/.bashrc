@@ -9,27 +9,24 @@ set -o ignoreeof
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
+
 alias cat="bat"
 alias ls="exa --icons -a --group-directories-first"
 alias fd='fd --type f --color=always -H --exclude .git'
 alias vim='nvim'
 alias lg='lazygit'
 alias init-conda='source /opt/anaconda/bin/activate root'
-# alias docker='sudo docker'
-
-## Use the up and down arrow keys for finding a command in history
-## (you can write some initial letters of the command first).
-bind '"\e[A":history-search-backward'
-bind '"\e[B":history-search-forward'
-
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias bathelp='bat --plain --language=help'
 alias xpaste='xclip -selection c -o'
 alias xcopy='xclip -selection c'
+
 help() {
 	"$@" --help 2>&1 | bathelp
 }
 
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export FZF_DEFAULT_OPTS="-m --height 50% --layout=reverse --border --inline-info 
   --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
   --bind '?:toggle-preview' 
@@ -46,14 +43,10 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export REACT_EDITOR=nvim
 export EDITOR=nvim
 export PATH="$PATH:$HOME/.cargo/bin/"
+export PATH="$PATH:$HOME/.rvm/bin"
+export PNPM_HOME="/home/amora/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 
 source /usr/share/nvm/init-nvm.sh
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
-
-export PATH="$PATH:$HOME/.rvm/bin"
-# source /home/amora/.rvm/bin/rvm
-# source /home/amora/.cache/yay/rvm/src/rvm/scripts/rvm
-
-export PNPM_HOME="/home/amora/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
