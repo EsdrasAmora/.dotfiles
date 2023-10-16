@@ -59,10 +59,7 @@ table.insert(hyperlink_rules, {
 
 return {
 	default_prog = { "/bin/bash" }, -- why is this necessary: https://github.com/wez/wezterm/issues/2870
-	-- debug_key_events = true,
 	font = wezterm.font_with_fallback({ "Fira Code", "Hack Nerd Font" }),
-	window_background_opacity = 0.8,
-	text_background_opacity = 1.0,
 	scrollback_lines = 5000,
 	font_size = 17.0,
 	window_padding = {
@@ -76,13 +73,11 @@ return {
 	color_scheme = "Catppuccin Mocha",
 	line_height = 1.1,
 	webgpu_preferred_adapter = gpus[1],
-	--enable_wayland = true, -- https://github.com/wez/wezterm/issues/1701
 	cursor_blink_ease_in = "EaseIn",
 	cursor_blink_ease_out = "EaseOut",
 	animation_fps = 120,
 	cursor_blink_rate = 800,
 	cursor_thickness = 1.0,
-	-- default_cursor_style = "BlinkingBar",
 	window_frame = {
 		inactive_titlebar_bg = "#171723",
 		active_titlebar_bg = "#171723",
@@ -114,7 +109,6 @@ return {
 			},
 		},
 	},
-	-- use_ime = false,
 	keys = {
 		{
 			key = "K",
