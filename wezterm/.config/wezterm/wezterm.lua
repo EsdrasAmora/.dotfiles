@@ -58,7 +58,7 @@ table.insert(hyperlink_rules, {
 })
 
 return {
-	default_prog = { "/bin/bash" }, -- why is this necessary: https://github.com/wez/wezterm/issues/2870
+	-- fixed: https://github.com/wez/wezterm/issues/4406
 	font = wezterm.font_with_fallback({ "Fira Code", "Hack Nerd Font" }),
 	scrollback_lines = 5000,
 	font_size = 17.0,

@@ -4,7 +4,6 @@
 [[ -z "$FUNCNEST" ]] && export FUNCNEST=100 # limits recursive functions, see 'man bash'
 
 set -o ignoreeof
-# set -o vi
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
@@ -50,6 +49,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PNPM_HOME="/home/amora/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
-source /usr/share/nvm/init-nvm.sh
+# nvm is TOOOOOOOOOOOOOOOOOOOOO slow wtf
+# source /usr/share/nvm/init-nvm.sh
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash

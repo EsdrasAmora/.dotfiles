@@ -10,7 +10,7 @@
 
 vim.api.nvim_create_user_command("SayHello", 'echo "Hello world!"', {})
 
-vim.api.nvim_create_user_command("TsErrors", function()
+vim.api.nvim_create_user_command("NoEmitTypescript", function()
   vim.cmd.compiler("tsc")
   vim.cmd.make("--noEmit")
 end, {})
