@@ -9,22 +9,25 @@ return {
           require("telescope").load_extension("fzf")
         end,
       },
+      {
+        "Marskey/telescope-sg",
+      },
     },
     keys = {
       { "<Leader>sq", "<cmd>Telescope quickfix<CR>", desc = "Telescope quickfix" },
     },
     opts = {
       --TODO: I don't know how to load this telescope extension. https://github.com/Marskey/telescope-sg
-      -- extensions = {
-      --   ast_grep = {
-      --     command = {
-      --       "ast-grep",
-      --       "--json=stream",
-      --     },
-      --     grep_open_files = false,
-      --     lang = nil,
-      --   },
-      -- },
+      extensions = {
+        ast_grep = {
+          command = {
+            "ast-grep",
+            "--json=stream",
+          },
+          grep_open_files = false,
+          lang = nil,
+        },
+      },
       defaults = {
         sort_lastused = true,
         wrap_results = true,

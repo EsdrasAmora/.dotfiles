@@ -44,9 +44,11 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export LAUNCH_EDITOR=nvim
 export REACT_EDITOR=nvim
 export EDITOR=nvim
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/bin/"
 export PATH="$PATH:$HOME/.rvm/bin"
-export PNPM_HOME="/home/amora/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 # nvm is TOOOOOOOOOOOOOOOOOOOOO slow wtf
