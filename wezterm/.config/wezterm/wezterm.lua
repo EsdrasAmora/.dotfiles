@@ -113,10 +113,7 @@ return {
 		{
 			key = "K",
 			mods = "CTRL|SHIFT",
-			action = act.Multiple({
-				act.ClearScrollback("ScrollbackAndViewport"),
-				act.SendKey({ key = "L", mods = "CTRL" }),
-			}),
+			action = act.SendKey({ key = "L", mods = "CTRL" }),
 		},
 	},
 	hyperlink_rules = hyperlink_rules,
