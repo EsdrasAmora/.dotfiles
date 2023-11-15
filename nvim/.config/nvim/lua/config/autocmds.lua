@@ -22,3 +22,9 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
   group = my_group,
   command = "set filetype=css",
 })
+
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = my_group,
+  pattern = "*",
+  command = "startinsert | set winfixheight",
+})
