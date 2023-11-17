@@ -3,18 +3,6 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     enabled = false,
   },
-  -- {
-  --   "stevearc/oil.nvim",
-  --   opts = {},
-  --   keys = {
-  --     "<leader>e",
-  --     "<cmd>Oil<cr>",
-  --     desc = "Open Oil",
-  --   },
-  --   dependencies = { "nvim-tree/nvim-web-devicons" },
-  --   lazy = false,
-  --   enabled = false,
-  -- },
   {
     "echasnovski/mini.files",
     version = "*",
