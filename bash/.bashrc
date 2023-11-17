@@ -49,6 +49,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$PATH:$HOME/.cargo/bin/"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PNPM_HOME="$HOME/.local/share/pnpm"
+export VOLTA_FEATURE_PNPM=1
 export PATH="$PNPM_HOME:$PATH"
 
 # nvm is TOOOOOOOOOOOOOOOOOOOOO slow wtf

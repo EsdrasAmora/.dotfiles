@@ -19,7 +19,7 @@ return {
     "echasnovski/mini.files",
     version = "*",
     -- required if using `nvim <path>`
-    -- lazy = false,
+    lazy = false,
     keys = {
       {
         "<leader>e",
