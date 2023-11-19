@@ -35,7 +35,7 @@ export FZF_DEFAULT_OPTS="-m --height 50% --layout=reverse --border --inline-info
 export FZF_DEFAULT_COMMAND='fd --type file --hidden --exclude .git'
 export FZF_CTRL_T_COMMAND='fd --type file --hidden --exclude .git'
 export PATH=/home/amora/.local/bin:$PATH
-export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
+export CARGO_NET_GIT_FETCH_WITH_CLI=true
 export _JAVA_AWT_WM_NONREPARENTING=1
 export ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL=10
 export ANDROID_HOME=$HOME/Android/Sdk
