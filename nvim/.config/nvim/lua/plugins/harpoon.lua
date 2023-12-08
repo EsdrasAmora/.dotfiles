@@ -99,19 +99,19 @@ return {
       end,
     },
     {
-      "<C-A-1>",
+      "<A-1>",
       function()
         require("harpoon.term").gotoTerminal(1)
       end,
     },
     {
-      "<C-A-2>",
+      "<A-2>",
       function()
         require("harpoon.term").gotoTerminal(2)
       end,
     },
     {
-      "<C-A-3>",
+      "<A-3>",
       function()
         require("harpoon.term").gotoTerminal(3)
       end,

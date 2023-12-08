@@ -22,9 +22,9 @@ return {
     opts = {
       windows = {
         preview = true,
-        width_focus = 50,
+        width_focus = 40,
         width_nofocus = 20,
-        width_preview = 30,
+        width_preview = 70,
       },
       mappings = {
         go_in_plus = "l",

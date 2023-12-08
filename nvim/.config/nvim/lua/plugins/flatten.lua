@@ -9,4 +9,5 @@ return {
       wezterm = true,
     },
   },
+  enabled = false,
 }
