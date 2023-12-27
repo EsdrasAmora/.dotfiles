@@ -18,6 +18,15 @@ return {
         end,
         desc = "Toggle MiniFiles",
       },
+      {
+        "<leader>E",
+        function()
+          if not MiniFiles.close() then
+            MiniFiles.open(nil, false)
+          end
+        end,
+        desc = "Toggle MiniFiles Root",
+      },
     },
     opts = {
       windows = {

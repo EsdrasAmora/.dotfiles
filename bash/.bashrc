@@ -7,6 +7,9 @@ set -o ignoreeof
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
+eval "$(fnm env)"
+# fixme:
+source ~/.bash_atlas_completions
 
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
@@ -56,3 +59,7 @@ export PATH="$PNPM_HOME:$PATH"
 # source /usr/share/nvm/init-nvm.sh
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
+
+# tabtab source for packages
+# uninstall by removing these lines
+# [ -f ~/.config/tabtab/bash/__tabtab.bash ] && . ~/.config/tabtab/bash/__tabtab.bash || true
