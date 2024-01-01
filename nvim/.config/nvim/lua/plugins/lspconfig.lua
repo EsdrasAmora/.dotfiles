@@ -10,4 +10,20 @@ return {
     -- disable a keymap
     -- keys[#keys + 1] = { "K", false }
   end,
+  opts = {
+    ---@type lspconfig.options
+    servers = {
+      svelte = {
+        on_attach = function(client)
+          vim.api.nvim_create_autocmd("BufWritePost", {
+            pattern = { "*.js", "*.ts", "*.svelte" },
+            callback = function(ctx)
+              P(ctx)
+              client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
+            end,
+          })
+        end,
+      },
+    },
+  },
 }
