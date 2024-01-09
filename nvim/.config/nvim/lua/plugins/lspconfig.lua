@@ -14,15 +14,15 @@ return {
     ---@type lspconfig.options
     servers = {
       svelte = {
-        on_attach = function(client)
-          vim.api.nvim_create_autocmd("BufWritePost", {
-            pattern = { "*.js", "*.ts", "*.svelte" },
-            callback = function(ctx)
-              P(ctx)
-              client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-            end,
-          })
-        end,
+        -- on_attach = function(client)
+        --   vim.api.nvim_create_autocmd("BufWritePost", {
+        --     pattern = { "*.js", "*.ts", "*.svelte" },
+        --     callback = function(ctx)
+        --       P(ctx)
+        --       client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
+        --     end,
+        --   })
+        -- end,
       },
     },
   },
