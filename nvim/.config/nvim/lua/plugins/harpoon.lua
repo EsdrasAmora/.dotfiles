@@ -1,137 +1,62 @@
 return {
   "ThePrimeagen/harpoon",
+  branch = "harpoon2",
+  config = function()
+    require("harpoon"):setup()
+  end,
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+  },
   keys = {
     {
       "<leader>ha",
       function()
-        require("harpoon.mark").add_file()
+        require("harpoon"):list():append()
       end,
-      desc = "Harpoon - Add file",
-    },
-    {
-      "<leader>hr",
-      function()
-        require("harpoon.mark").rm_file(vim.api.nvim_buf_get_name(0))
-      end,
-      desc = "Harpoon - remove current file",
+      desc = "harpoon file",
     },
     {
       "<leader>hh",
       function()
-        require("harpoon.ui").toggle_quick_menu()
+        local harpoon = require("harpoon")
+        harpoon.ui:toggle_quick_menu(harpoon:list())
       end,
-      desc = "Harpoon - toggle menu/index",
+      desc = "harpoon quick menu",
     },
     {
-      "<S-h>",
+      "<leader>h1",
       function()
-        require("harpoon.ui").nav_prev()
+        require("harpoon"):list():select(1)
       end,
-      desc = "Harpoon - previous file",
+      desc = "harpoon to file 1",
     },
     {
-      "<S-l>",
+      "<leader>h2",
       function()
-        require("harpoon.ui").nav_next()
+        require("harpoon"):list():select(2)
       end,
-      desc = "Harpoon - next file",
+      desc = "harpoon to file 2",
     },
     {
-      "<C-A-1>",
+      "<leader>h3",
       function()
-        print("testeeee")
+        require("harpoon"):list():select(3)
       end,
-      desc = "Harpoon - next file",
+      desc = "harpoon to file 3",
     },
     {
-      "<C-1>",
+      "<leader>h4",
       function()
-        require("harpoon.ui").nav_file(1)
+        require("harpoon"):list():select(4)
       end,
+      desc = "harpoon to file 4",
     },
     {
-      "<C-2>",
+      "<leader>h5",
       function()
-        require("harpoon.ui").nav_file(2)
+        require("harpoon"):list():select(5)
       end,
-      desc = "Harpoon - file 1",
+      desc = "harpoon to file 5",
     },
-    {
-      "<C-3>",
-      function()
-        require("harpoon.ui").nav_file(3)
-      end,
-    },
-    {
-      "<C-4>",
-      function()
-        require("harpoon.ui").nav_file(4)
-      end,
-    },
-    {
-      "<C-5>",
-      function()
-        require("harpoon.ui").nav_file(5)
-      end,
-    },
-    {
-      "<C-6>",
-      function()
-        require("harpoon.ui").nav_file(6)
-      end,
-    },
-    {
-      "<C-7>",
-      function()
-        require("harpoon.ui").nav_file(7)
-      end,
-    },
-    {
-      "<C-8>",
-      function()
-        require("harpoon.ui").nav_file(8)
-      end,
-    },
-    {
-      "<C-9>",
-      function()
-        require("harpoon.ui").nav_file(9)
-      end,
-    },
-    {
-      "<A-1>",
-      function()
-        require("harpoon.term").gotoTerminal(1)
-      end,
-    },
-    {
-      "<A-2>",
-      function()
-        require("harpoon.term").gotoTerminal(2)
-      end,
-    },
-    {
-      "<A-3>",
-      function()
-        require("harpoon.term").gotoTerminal(3)
-      end,
-    },
-  },
-
-  dependencies = {
-    "nvim-lua/plenary.nvim",
   },
 }
---maybe delete persistence.nvim
--- vim.keymap.del("n", "[b")
--- vim.keymap.del("n", "]b")
---
--- vim.keymap.del("n", "<S-h>")
--- vim.keymap.del("n", "<S-l>")
---
--- vim.keymap.del("n", "<leader><tab>l")
--- vim.keymap.del("n", "<leader><tab>f")
--- vim.keymap.del("n", "<leader><tab><tab>")
--- vim.keymap.del("n", "<leader><tab>]")
--- vim.keymap.del("n", "<leader><tab>[")
--- vim.keymap.del("n", "<leader><tab>d")
