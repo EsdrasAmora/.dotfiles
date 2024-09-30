@@ -9,6 +9,7 @@ vim.keymap.set("n", "<Leader>o", "o<Esc>", { remap = true })
 vim.keymap.set("n", "<Leader>O", "O<Esc>", { remap = true })
 vim.keymap.set("n", "x", '"_x')
 vim.keymap.set("n", "vp", "viwp")
+-- vim.keymap.set({ "n", "v", "i" }, "<CAPS-lock>", "<esc>")
 
 vim.keymap.del("n", "[b")
 vim.keymap.del("n", "]b")
